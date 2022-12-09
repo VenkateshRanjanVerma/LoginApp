@@ -11,13 +11,13 @@ const Stack = createStackNavigator();
 const StackNavigator = () => {
   return (
     <Stack.Navigator>
-        <Stack.Screen 
+        {/* <Stack.Screen 
             name="Splash" 
             component={SplashScreen} 
             options={{
                 headerShown: false
             }}
-        />
+        /> */}
         <Stack.Screen 
             name="Login" 
             component={LoginScreen} 

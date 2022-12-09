@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {Text, View, TextInput, StyleSheet,Modal, Dimensions,Pressable, Image, Touchable, showPass } from 'react-native'
+import {Text, View, TextInput, StyleSheet,Modal,ScrollView,KeyboardAvoidingView,Keyboard, TouchableWithoutFeedback, Dimensions,Pressable, Image, Touchable, showPass } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import HeaderLogo from './HeaderLogo'
 
@@ -35,7 +35,13 @@ const LoginScreen = ({navigation}) => {
 
 
     return (
-        <View style={{ alignItems: 'center', height: '1000%',backgroundColor: '#438AB6', top: -795,}}>
+    <KeyboardAvoidingView behavior="position">
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <ScrollView
+        style={styles.mainContainer}
+        contentContainerStyle={{alignItems: 'center'}}>
+          
+        <View style={styles.mainbackground}>
           
           <View style={styles.headerBox}>
             <Image style={{resizeMode: 'contain', width: 200}}
@@ -73,20 +79,31 @@ const LoginScreen = ({navigation}) => {
             <View style={{  flex: 1,alignItems: 'center',marginTop: 22,justifyContent: 'center',}}>
               <View style={styles.modalView}>
                 <Text style={{  marginBottom: 15, textAlign: 'center',color: 'red'}}>Incorrect Username/Password</Text>
-                <Pressable
+                <TouchableOpacity
                   style={[styles.modalbutton, styles.buttonClose]}
                   onPress={() => setModalVisible(!modalVisible)}>
                   <Text style={styles.textStyle}>Try again</Text>
-                </Pressable>
+                </TouchableOpacity>
               </View>
             </View>
           </Modal>
 
         </View>
+        </ScrollView>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
       );
     };
     
     const styles = StyleSheet.create({
+    mainbackground: {
+        paddingHorizontal: 50, 
+        alignItems: 'center', 
+        position: 'relative', 
+        width: "100%", 
+        height: '1000%',
+        backgroundColor: '#438AB6', 
+        top: -795,},
 
       headerBox: {
         backgroundColor: 'white',
@@ -127,7 +144,7 @@ const LoginScreen = ({navigation}) => {
       input: {
         marginTop:40,
         height: 40,
-        width: '78%',
+        width: '100%',
         borderRadius:5,
         backgroundColor: 'white',
         margin: 12,
@@ -147,7 +164,11 @@ const LoginScreen = ({navigation}) => {
         borderWidth:1,
        
       },
-    
+      mainContainer: {
+     
+        height: '100%',
+      
+      },
       
     });
     
