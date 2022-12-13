@@ -61,6 +61,8 @@ const SignupScreen = ({navigation}) => {
 
 
               <View style={{ height: 500, width: '100%'}} >
+
+                
 		      <MapView
 				style={styles.map}
 				initialRegion={Locations[0]}
@@ -101,6 +103,11 @@ const styles = StyleSheet.create({
     color: 'black',
     },
 
+    centeredView: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'flex-end'
+    },
     container: {
       ...StyleSheet.absoluteFillObject,
       height: 400,
