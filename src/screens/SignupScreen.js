@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     centeredView: {
       flex: 1,
       alignItems: 'center',
-      justifyContent: 'flex-end'
+      justifyContent: 'center'
     },
     container: {
       ...StyleSheet.absoluteFillObject,
