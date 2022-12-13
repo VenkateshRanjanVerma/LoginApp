@@ -9,8 +9,11 @@ import SignupScreen from '../screens/SignupScreen';
 const Stack = createStackNavigator();
 
 const StackNavigator = () => {
+
+
+    
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName='Signup' >
         {/* <Stack.Screen 
             name="Splash" 
             component={SplashScreen} 
